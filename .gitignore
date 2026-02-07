@@ -1,0 +1,6 @@
+# Terraform
+infra/terraform/envs/dev/.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
