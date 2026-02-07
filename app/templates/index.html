@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Preparation Meets Opportunity</title>
+  <meta name="description" content="Preparation meets opportunity — build the habits, systems, and discipline that turn chances into results." />
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card:#101b33;
+      --text:#e9eefc;
+      --muted:#a9b6d6;
+      --accent:#7aa2ff;
+      --accent2:#56f1c7;
+      --border:rgba(255,255,255,.10);
+      --shadow: 0 18px 50px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: radial-gradient(1200px 700px at 20% 10%, rgba(122,162,255,.18), transparent 55%),
+                  radial-gradient(900px 600px at 90% 30%, rgba(86,241,199,.14), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.5;
+    }
+    .wrap{max-width:1100px;margin:0 auto;padding:36px 18px}
+    .nav{
+      display:flex;align-items:center;justify-content:space-between;
+      padding:14px 18px;border:1px solid var(--border);border-radius:14px;
+      background:rgba(16,27,51,.55);backdrop-filter: blur(10px);
+      box-shadow: var(--shadow);
+    }
+    .brand{
+      display:flex;gap:10px;align-items:center;font-weight:700;letter-spacing:.2px
+    }
+    .dot{
+      width:12px;height:12px;border-radius:999px;background:linear-gradient(135deg,var(--accent),var(--accent2));
+      box-shadow:0 0 0 6px rgba(122,162,255,.12);
+    }
+    .nav a{
+      color:var(--muted);text-decoration:none;font-size:14px;margin-left:14px
+    }
+    .nav a:hover{color:var(--text)}
+    .hero{
+      margin-top:22px;
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:18px;
+      align-items:stretch;
+    }
+    @media (max-width:900px){
+      .hero{grid-template-columns: 1fr}
+    }
+    .panel{
+      border:1px solid var(--border);border-radius:18px;
+      background:rgba(16,27,51,.55);backdrop-filter: blur(10px);
+      box-shadow: var(--shadow);
+      padding:22px;
+      position:relative;
+      overflow:hidden;
+    }
+    .panel:before{
+      content:"";
+      position:absolute;inset:-2px;
+      background: radial-gradient(600px 220px at 20% 0%, rgba(122,162,255,.18), transparent 60%),
+                  radial-gradient(600px 220px at 90% 20%, rgba(86,241,199,.14), transparent 60%);
+      pointer-events:none;
+    }
+    .panel > *{position:relative}
+    h1{
+      margin:6px 0 10px;
+      font-size:44px;
+      line-height:1.08;
+      letter-spacing:-.7px;
+    }
+    .tag{
+      display:inline-flex;align-items:center;gap:8px;
+      font-size:13px;color:var(--muted);
+      border:1px solid var(--border);
+      padding:8px 12px;border-radius:999px;
+      background:rgba(11,18,32,.45);
+    }
+    .tag b{color:var(--text)}
+    .lead{
+      font-size:16px;color:var(--muted);max-width:58ch;margin:0 0 16px;
+    }
+    .ctaRow{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+    .btn{
+      border:1px solid var(--border);
+      background:rgba(11,18,32,.45);
+      color:var(--text);
+      padding:10px 14px;border-radius:12px;
+      cursor:pointer;
+      font-weight:600;
+      text-decoration:none;
+      display:inline-flex;align-items:center;gap:10px;
+    }
+    .btn.primary{
+      border-color: rgba(122,162,255,.35);
+      background: linear-gradient(135deg, rgba(122,162,255,.18), rgba(86,241,199,.10));
+    }
+    .btn:hover{transform: translateY(-1px)}
+    .mini{
+      display:grid;gap:12px;
+    }
+    .quote{
+      font-size:18px;
+      margin:0;
+      padding:18px;
+      border:1px dashed rgba(255,255,255,.20);
+      border-radius:16px;
+      background:rgba(11,18,32,.35);
+    }
+    .quote span{color:var(--muted);font-size:13px;display:block;margin-top:8px}
+    .stat{
+      display:flex;gap:12px;align-items:flex-start;
+      padding:14px;border:1px solid var(--border);border-radius:16px;
+      background:rgba(11,18,32,.35);
+    }
+    .badge{
+      width:34px;height:34px;border-radius:12px;
+      background:linear-gradient(135deg, rgba(122,162,255,.35), rgba(86,241,199,.25));
+      display:grid;place-items:center;
+      font-weight:800;
+    }
+    .grid{
+      margin-top:18px;
+      display:grid;grid-template-columns: repeat(3, 1fr);gap:14px;
+    }
+    @media (max-width:900px){
+      .grid{grid-template-columns:1fr}
+    }
+    .card{
+      padding:18px;border:1px solid var(--border);border-radius:18px;
+      background:rgba(16,27,51,.55);
+      box-shadow: 0 10px 30px rgba(0,0,0,.22);
+    }
+    .card h3{margin:0 0 8px;font-size:18px}
+    .card p{margin:0;color:var(--muted);font-size:14px}
+    .footer{
+      margin-top:22px;
+      color:rgba(233,238,252,.65);
+      font-size:12px;
+      text-align:center;
+    }
+    .small{
+      font-size:12px;color:rgba(233,238,252,.65);
+      margin-top:10px
+    }
+    .hr{
+      height:1px;background:rgba(255,255,255,.10);
+      margin:14px 0
+    }
+    .pulse{
+      display:inline-block;
+      width:8px;height:8px;border-radius:999px;
+      background: var(--accent2);
+      box-shadow: 0 0 0 0 rgba(86,241,199,.55);
+      animation:pulse 2.4s infinite;
+    }
+    @keyframes pulse{
+      0%{box-shadow:0 0 0 0 rgba(86,241,199,.55)}
+      70%{box-shadow:0 0 0 10px rgba(86,241,199,0)}
+      100%{box-shadow:0 0 0 0 rgba(86,241,199,0)}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="nav">
+      <div class="brand">
+        <span class="dot"></span>
+        <span>Project 2 • Landing</span>
+      </div>
+      <div>
+        <a href="#why">Why it works</a>
+        <a href="#pillars">Pillars</a>
+        <a href="#action">Action</a>
+      </div>
+    </div>
+
+    <section class="hero" id="why">
+      <div class="panel">
+        <div class="tag"><span class="pulse"></span> <b>Preparation meets opportunity</b> — and results follow.</div>
+        <h1>Build readiness.<br/>Catch the moment.</h1>
+        <p class="lead">
+          Opportunity doesn’t always announce itself. The people who win are the ones who’ve already done the work:
+          skills sharpened, systems in place, and discipline practiced.
+        </p>
+
+        <div class="ctaRow" id="action">
+          <a class="btn primary" href="#pillars" aria-label="See the pillars">See the pillars →</a>
+          <button class="btn" onclick="copyQuote()">Copy quote</button>
+          <button class="btn" onclick="toggleMode()">Toggle contrast</button>
+        </div>
+
+        <div class="hr"></div>
+        <div class="small">
+          Use this page as a simple “home” for your Project 2 deployment (EKS + ALB).
+        </div>
+      </div>
+
+      <div class="panel mini">
+        <p class="quote" id="quote">
+          “Preparation meets opportunity — when the moment arrives, you don’t rise to the occasion… you fall to your training.”
+          <span>— a reminder to build habits before the spotlight</span>
+        </p>
+        <div class="stat">
+          <div class="badge">1</div>
+          <div>
+            <div style="font-weight:700">Practice before pressure</div>
+            <div style="color:var(--muted);font-size:13px">Rehearse the process so execution becomes automatic.</div>
+          </div>
+        </div>
+        <div class="stat">
+          <div class="badge">2</div>
+          <div>
+            <div style="font-weight:700">Systems beat motivation</div>
+            <div style="color:var(--muted);font-size:13px">Checklists and pipelines reduce mistakes.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid" id="pillars">
+      <div class="card">
+        <h3>Preparation</h3>
+        <p>Do the unglamorous work: learn the fundamentals, document the steps, automate the repeatable.</p>
+      </div>
+      <div class="card">
+        <h3>Opportunity</h3>
+        <p>Moments appear as new roles, new projects, or sudden problems. Recognize them and respond fast.</p>
+      </div>
+      <div class="card">
+        <h3>Execution</h3>
+        <p>Move with clarity: prioritize, ship, validate, and iterate. Results are a byproduct of consistency.</p>
+      </div>
+    </section>
+
+    <div class="footer">
+      Deployed via CI/CD • Powered by habits • © <span id="year"></span>
+    </div>
+  </div>
+
+  <script>
+    // tiny utilities for a "live" feel (optional)
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    function copyQuote(){
+      const text = document.getElementById("quote").innerText.replace(/\s+/g," ").trim();
+      navigator.clipboard.writeText(text).then(() => {
+        alert("Quote copied to clipboard.");
+      }).catch(() => {
+        alert("Copy failed (browser blocked). You can copy manually.");
+      });
+    }
+
+    function toggleMode(){
+      // simple contrast toggle
+      const root = document.documentElement;
+      const current = getComputedStyle(root).getPropertyValue('--bg').trim();
+      if(current === '#0b1220'){
+        root.style.setProperty('--bg', '#070a12');
+        root.style.setProperty('--card', '#0b1020');
+        root.style.setProperty('--muted', '#c1cbee');
+      } else {
+        root.style.setProperty('--bg', '#0b1220');
+        root.style.setProperty('--card', '#101b33');
+        root.style.setProperty('--muted', '#a9b6d6');
+      }
+    }
+  </script>
+</body>
+</html>

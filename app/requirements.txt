@@ -1,0 +1,12 @@
+flask==3.0.0
+
+# OpenTelemetry core
+opentelemetry-api
+opentelemetry-sdk
+
+# OTLP exporter (to talk to the collector later)
+opentelemetry-exporter-otlp
+
+# Auto-instrumentation
+opentelemetry-instrumentation
+opentelemetry-instrumentation-flask
