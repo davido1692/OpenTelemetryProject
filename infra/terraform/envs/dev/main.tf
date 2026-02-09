@@ -24,6 +24,8 @@ module "vpc" {
   enable_nat_gateway = true
   single_nat_gateway = true
 
+  cluster_name = module.eks.cluster_name
+
   tags = local.tags
 }
 
@@ -32,6 +34,7 @@ module "eks" {
 
   cluster_name    = local.cluster_name
   cluster_version = var.cluster_version
+
 
   vpc_id              = module.vpc.vpc_id
   private_subnet_ids  = module.vpc.private_subnet_ids
