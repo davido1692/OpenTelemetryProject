@@ -1,0 +1,32 @@
+mode: deployment
+
+image:
+  repository: otel/opentelemetry-collector-contrib
+
+service:
+  type: ClusterIP
+
+config:
+  receivers:
+    otlp:
+      protocols:
+        grpc:
+        http:
+
+  processors:
+    batch:
+
+  exporters:
+    jaeger:
+      endpoint: jaeger-collector.jaeger.svc.cluster.local:14250
+      tls:
+        insecure: true
+    logging:
+      verbosity: basic
+
+  service:
+    pipelines:
+      traces:
+        receivers: [otlp]
+        processors: [batch]
+        exporters: [jaeger, logging]
