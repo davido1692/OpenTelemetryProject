@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>OpenTelemetryProject</title>
+  <style>
+    body { margin:0; font-family: system-ui, Arial; background: #0b1220; color: #e7eefc; }
+    .wrap { min-height:100vh; display:flex; align-items:center; justify-content:center; padding:24px; }
+    .card {
+      max-width: 820px; width: 100%;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 18px 50px rgba(0,0,0,0.35);
+    }
+    .badge { display:inline-block; padding:6px 10px; border-radius:999px; background:#123; border:1px solid rgba(255,255,255,0.12); }
+    h1 { margin: 14px 0 8px; font-size: 34px; letter-spacing: 0.2px; }
+    .quote { font-size: 22px; line-height: 1.45; margin: 18px 0; }
+    .quote strong { color: #9ad1ff; }
+    .sub { opacity: 0.85; margin-top: 10px; }
+    .hr { height:1px; background: rgba(255,255,255,0.12); margin: 18px 0; }
+    .pillrow { display:flex; gap:10px; flex-wrap: wrap; }
+    .pill { padding:8px 10px; border-radius: 12px; background: rgba(0,0,0,0.25); border:1px solid rgba(255,255,255,0.12); }
+    a { color:#9ad1ff; text-decoration:none; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <span class="badge">opentelemetryproject • Flask • EKS • ALB</span>
+      <h1>Discipline beats excuses.</h1>
+      <div class="quote">
+        <strong>Winners never quit, quitters never win.</strong>
+      </div>
+      <div class="hr"></div>
+      <div class="pillrow">
+        <div class="pill">/healthz ready</div>
+        <div class="pill">OTel enabled</div>
+        <div class="pill">ALB Ingress</div>
+      </div>
+      <p class="sub">
+        If you can see this page, your pipeline + ingress path is working.
+      </p>
+    </div>
+  </div>
+</body>
+</html>

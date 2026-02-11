@@ -1,0 +1,37 @@
+replicaCount: 1
+
+image:
+  repository: ""     # set by Jenkins/CLI to your ECR repo URI (no tag)
+  tag: "v1"
+  pullPolicy: IfNotPresent
+
+service:
+  port: 80
+  targetPort: 8080
+
+otel:
+  serviceName: "opentelemetryproject-flask"
+  collectorEndpoint: "otel-collector.opentelemetry.svc.cluster.local:4317"
+
+ingress:
+  enabled: true
+  className: "alb"
+  scheme: "internet-facing"
+  targetType: "ip"
+  listenPorts: '[{"HTTP":80}]'
+  healthcheckPath: "/healthz"
+
+hpa:
+  enabled: true
+  minReplicas: 1
+  maxReplicas: 12  # “3 pods per node” x 4 nodes = 12
+  cpuUtilization: 50
+  memoryUtilization: 50
+
+resources:
+  requests:
+    cpu: "100m"
+    memory: "128Mi"
+  limits:
+    cpu: "500m"
+    memory: "256Mi"
