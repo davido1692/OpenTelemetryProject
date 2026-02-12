@@ -115,6 +115,7 @@ OpenTelemetryProject/
 cd infra/terraform
 terraform init
 terraform plan
+terraform apply
 ```
 
 ---
