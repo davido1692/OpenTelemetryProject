@@ -47,6 +47,28 @@ pipeline {
       }
     }
 
+
+stage('Debug Identity') {
+  steps {
+    sh '''
+      set -euxo pipefail
+
+      echo "=== AWS identity Jenkins is using ==="
+      aws sts get-caller-identity
+
+      echo "=== kubeconfig location ==="
+      echo "HOME=$HOME"
+      ls -la ~/.kube || true
+      kubectl config current-context || true
+      kubectl config view --minify -o jsonpath='{.users[0].user.exec.command}{" "}{.users[0].user.exec.args}{"\\n"}' || true
+
+      echo "=== RBAC check ==="
+      kubectl auth can-i create namespaces -A || true
+    '''
+  }
+}
+
+
     stage('Deploy via Helm') {
       steps {
         sh """
