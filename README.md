@@ -17,6 +17,9 @@
 - Helm for Kubernetes deployments  
 - CI/CD with Jenkins (build → push → deploy)  
 
+Important: This project does not provision ECR via Terraform. You must manually create the ECR repository in AWS before building and pushing container images.
+
+
 This project mirrors real production constraints, failures, and fixes.
 
 ---
