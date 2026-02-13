@@ -3,14 +3,14 @@ FROM python:3.12-slim
 WORKDIR /app
 
 # Copy requirements FIRST (better layer caching)
-COPY app/flaskapp/requirements.txt /app/requirements.txt
+COPY flaskapp/requirements.txt /app/requirements.txt
 
 # Install deps + setuptools (fixes pkg_resources error)
 RUN pip install --no-cache-dir -U pip setuptools wheel \
     && pip install --no-cache-dir -r /app/requirements.txt
 
 # Copy application code
-COPY app/flaskapp /app/flaskapp
+COPY flaskapp /app/flaskapp
 WORKDIR /app/flaskapp
 
 EXPOSE 8080

@@ -2,7 +2,7 @@ replicaCount: 1
 
 image:
   repository: ""     # set by Jenkins/CLI to your ECR repo URI (no tag)
-  tag: "v1"
+  tag: "v2"
   pullPolicy: IfNotPresent
 
 service:
